@@ -4,11 +4,6 @@ const reviewController = require('../controllers/reviewController');
 
 const router = express.Router({ mergeParams: true });
 
-// POST /tour/:id/reviews
-// POST /reviews
-
-// GET /tour/:id/reviews
-
 router
   .route('/')
   .get(reviewController.getAllReviews)
@@ -21,6 +16,7 @@ router
 
 router
   .route('/:id')
+  .get(reviewController.getReview)
   .patch(reviewController.updateReview)
   .delete(reviewController.deleteReview);
 
